@@ -7,10 +7,9 @@
 
         <!-- =====BOX ICONS===== -->
         <!-- <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'> -->
-        <title>Portfolio website complete</title>
+        <title>play and win</title>
     </head>
     <body>
-    
         <section class="spin-sec">
             <div id="main" class="main">
                 <div id="wheel" class="wheel">
@@ -29,39 +28,39 @@
             </div>
             <div id="popup" class="popup">
                 <div class="popup-content">
-                    <div class="content">
-                        <h2>Kemi</h2>
-                        <h2>Kemi</h2>
+                    <div class="container-popup">
+                        <p>Play & win</p>
+                        <div class="typewriter">COMING SOON !</div>
+                        <div class="confetti"></div>
                     </div>
-                    <button class="close-btn" onclick="closePopup()">Close</button>
+                    <button class="close-btn" onclick="closePopup()">✖</button>
                 </div>
             </div>
+            
         </section>
         
-
-
-
-
-
-
-      
-
-   
-
-
-
-
-
 <script>
 
 function popup() {
     // Show the popup
     const popup = document.getElementById('popup');
     popup.style.display = 'flex';
+
+    const data = document.querySelector(".typewriter");
+
+    confetti({
+  particleCount: 100,
+  spread: 90,
+  origin: {
+    y: (data.getBoundingClientRect().bottom + 60) / window.innerHeight,
+  },
+  zIndex: 9999, 
+});
+
 }
 
 function closePopup() {
-    // Hide the popup
+
     const popup = document.getElementById('popup');
     popup.style.display = 'none';
 }
@@ -73,20 +72,15 @@ function closePopup() {
 
     function letsSpin() {
       
-      var x = 1024; //min value
-      var y = 9999; //max value
-    
+      var x = 1024; 
+      var y = 9999; 
       var deg = Math.floor(Math.random() * (x - y)) + y;
-    
       document.getElementById('wheel').style.transform = "rotate("+deg+"deg)";
-    
     }
     
     </script>
-        <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
-
-        <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     </body>
 </html>

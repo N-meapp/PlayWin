@@ -5,13 +5,17 @@
   outline: none;
 }
 body { 
+  
+}
+
+.spin-sec{
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  background: #ffe605;
+  background: url(../img/a5.png) no-repeat center;
   background-size: cover;
 }
 .main {
@@ -21,13 +25,17 @@ body {
 }
 
 
+@font-face {
+  font-family: scrach;
+  src: url(../font/Dynamix.ttf);
+}
 
 .wheel {
   width: 100%;
   height: 100%;
   position: relative; 
   border-radius: 50%;
-  border: 10px solid #fff;
+  border: 10px solid #f323ef;
   overflow: hidden;
   transition: all ease 4s;
 }
@@ -105,7 +113,8 @@ span p {
    height: 75px;
    border-radius: 50%;
    border: 2px solid #fff;
-   background-color: black;
+   background: rgb(230,196,0);
+   background: radial-gradient(circle, rgba(230,196,0,1) 0%, rgba(128,62,0,1) 100%);
    color: #fff;
    box-shadow: 0 5px 20px #000;
    font-weight: bold;
@@ -151,7 +160,7 @@ span p {
   height: 100%;
   position: relative;
   border-radius: 50%;
-  border: 11px solid #fff;
+  border: 11px solid #f323ef;
   overflow: hidden;
   transition: all ease 4s;
 }
@@ -187,7 +196,7 @@ span p {
 }
 
 .span6 {
-  clip-path: polygon(40% 100%, -6% 1%, 109% 34%);
+  clip-path: polygon(40% 103%, -6% 1%, 109% 34%);
   background-color: #ff5a5a;
   bottom: 0px;
   left: 137px;
@@ -199,7 +208,7 @@ span p {
   right: 142px;
 }
 .span8 {
-  clip-path: polygon(3% 100%, 100% 55%, 40% 0);
+  clip-path: polygon(3% 97%, 105% 55%, 40% 0);
   background-color: #ff9612;
   top: -2px;
   left: 132px;
@@ -254,12 +263,47 @@ span p {
 }
 
 .popup-content {
-  background: white;
+  position: relative;
+  background: rgb(135,45,191);
+  background: linear-gradient(90deg, rgba(135,45,191,1) 43%, rgba(255,0,0,0.9248074229691877) 100%);
   padding: 30px;
   border-radius: 10px;
+  color: #fff;
   text-align: center;
   animation: popup-fade-in 0.5s ease-in-out;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 800;
+ margin: 8px;
+}
+
+.container-popup p{
+  color: #de8cff;
+  margin-bottom: 30px;
+}
+.container-popup .typewriter{
+  font-family: scrach;
+}
+.close-btn {
+  position: absolute;
+  top: -12px;
+  right: -5px;
+  /* background: transparent; */
+  border: 1px solid #fff;
+  font-size: 20px;
+  font-weight: bold;
+  color: #460f45;
+  cursor: pointer;
+  /* background-color: black; */
+  border-radius: 50%;
+  /* padding: 5px; */
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.close-btn:hover {
+  color: #ff0000;
 }
 
 /* Fade-in animation */
@@ -275,7 +319,7 @@ span p {
 }
 
 /* Close button */
-.close-btn {
+/* .close-btn {
   margin-top: 10px;
   padding: 5px 10px;
   background-color: #ff4444;
@@ -283,59 +327,7 @@ span p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 
 
-
-.content {
-	/* position: relative; */
-}
-
-.content h2 {
-	color: #fff;
-	font-size: 3em;
-	/* position: absolute; */
-	transform: translate(-50%, -50%);
-}
-
-.content h2:nth-child(1) {
-	color: transparent;
-	-webkit-text-stroke: 2px #8338ec;
-}
-
-.content h2:nth-child(2) {
-	color: #c19bf5;
-	animation: animate 4s ease-in-out infinite;
-}
-
-@keyframes animate {
-	0%,
-	100% {
-		clip-path: polygon(
-			0% 45%,
-			16% 44%,
-			33% 50%,
-			54% 60%,
-			70% 61%,
-			84% 59%,
-			100% 52%,
-			100% 100%,
-			0% 100%
-		);
-	}
-
-	50% {
-		clip-path: polygon(
-			0% 60%,
-			15% 65%,
-			34% 66%,
-			51% 62%,
-			67% 50%,
-			84% 45%,
-			100% 46%,
-			100% 100%,
-			0% 100%
-		);
-	}
-}
