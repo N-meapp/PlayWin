@@ -457,8 +457,6 @@ span p {
   z-index: 1;
   display: none;
   align-content: center;
-  justify-items: center;
-  place-items: center;
 }
 
 .colorcode-choose{
@@ -470,7 +468,7 @@ span p {
   display: none;
   align-content: center;
   /* justify-items: center; */
-  place-items: center;
+  /* place-items: center; */
 }
 
 .scratch-card-canvas-render {
@@ -1010,8 +1008,8 @@ cursor: pointer;
   display: flex;
   gap: 10px;
   width: 100%;
-
 }
+
 
 .colorcode-card{
   padding-inline: 20px;
@@ -1020,6 +1018,7 @@ cursor: pointer;
   border-radius: 25px;
   align-content: center;
   text-align: center;
+  justify-self: center;
   /* background-image: url(../img/colorcodebg.jpg); */
   background-position: center;
   background-size: cover;
@@ -1056,12 +1055,13 @@ cursor: pointer;
   background-image: linear-gradient(to right, #ff0000 , rgb(161 0 0));
   border-radius: 25px;
   align-content: center;
-  justify-items: center;
+  /* justify-items: center; */
   /* background-image: url(../img/colorcodebg.jpg); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
+  justify-self: center;
 }
 
 .scratch-card-popup-blue{
@@ -1071,12 +1071,14 @@ cursor: pointer;
   background-image: linear-gradient(to right, rgb(0, 162, 255) , rgb(0, 217, 255));
   border-radius: 25px;
   align-content: center;
-  justify-items: center;
+  /* justify-items: center; */
   /* background-image: url(../img/colorcodebg.jpg); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
+  justify-self: center;
+
 }
 
 
@@ -1087,12 +1089,14 @@ cursor: pointer;
   background-image: linear-gradient(to right, rgb(0, 179, 104) , rgb(0, 255, 179));
   border-radius: 25px;
   align-content: center;
-  justify-items: center;
+  /* justify-items: center; */
   /* background-image: url(../img/colorcodebg.jpg); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
+  justify-self: center;
+
 }
 
 
