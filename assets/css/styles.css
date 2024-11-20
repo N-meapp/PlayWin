@@ -458,6 +458,7 @@ span p {
   display: none;
   align-content: center;
   justify-items: center;
+  place-items: center;
 }
 
 .colorcode-choose{
@@ -468,7 +469,8 @@ span p {
   z-index: 1;
   display: none;
   align-content: center;
-  justify-items: center;
+  /* justify-items: center; */
+  place-items: center;
 }
 
 .scratch-card-canvas-render {
@@ -1017,7 +1019,7 @@ cursor: pointer;
   background: #ffffff;
   border-radius: 25px;
   align-content: center;
-  justify-items: center;
+  text-align: center;
   /* background-image: url(../img/colorcodebg.jpg); */
   background-position: center;
   background-size: cover;
