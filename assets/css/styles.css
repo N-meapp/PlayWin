@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantata+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -596,6 +598,135 @@ html{
 
 @media  (max-width:650px) {
   .each-section{
-    height: 75vh;
+    height: 100vh;
   }
+}
+
+
+.section-vis{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background: url(../img/bg-web.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+.cate-div{
+  padding:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cate-ch1{
+
+    max-width: 500px;
+    width: 600px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  padding: 27px;
+  border-radius: 25px;
+  border: 3px solid rgb(209 29 206);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.cate-ch2{
+  max-width: 500px;
+  width: 600px;
+background-color: rgb(255, 255, 255);
+margin-bottom: 20px;
+padding: 27px;
+border-radius: 25px;
+border: 3px solid rgb(216, 184, 0);
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+display: flex;
+justify-content: space-between;
+cursor: pointer;
+}
+
+.sec-content{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sec-content h1{
+  font-size: 21px;
+  margin-top: 12px;
+  text-align: center;
+  color: #0e0e0e;
+  font-family: "Cantata One", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sec-content p{
+  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  color: rgb(46, 46, 46);
+  text-align: center;
+}
+
+.sec-img img{
+ width: 80px;
+}
+
+.cate-div-a{
+  text-decoration: none;
+}
+
+@media  (max-width:650px) {
+
+  .cate-div-a{
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .section-vis{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background: url(../img/bg-mob.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .cate-div{
+    padding:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .cate-ch1{
+    max-width: 500px;
+    width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 15px;
+  padding: 19px;
+  border-radius: 25px;
+  border: 3px solid rgb(209 29 206);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  cursor: pointer;
+}
+
+.cate-ch2{
+  max-width: 500px;
+  width: 100%;
+background-color: rgb(255, 255, 255);
+margin-bottom: 15px;
+padding: 19px;
+border-radius: 25px;
+border: 3px solid rgb(216, 184, 0);
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+cursor: pointer;
+}
+
 }

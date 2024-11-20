@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <!-- <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'> -->
+        <title>play and win</title>
+    </head>
+    <body>
+
+
+
+        <section class="spin-sec each-section">
+            <div id="main" class="main">
+                <div id="wheel" class="wheel">
+                    <div>
+                        <span class="span1"><p>5000</p></span>
+                        <span class="span2"><p>7000</p></span>
+                        <span class="span3"><p>1000</p></span>
+                        <span class="span4"><p>500</p></span>
+                        <span class="span5"><p>2000</p></span>
+                        <span class="span6"><p>6000</p></span>
+                        <span class="span7"><p>500</p></span>
+                        <span class="span8"><p>3000</p></span>
+                    </div>
+                </div>
+                <button class="spin" onclick="letsSpin(), popup()">SPIN</button>
+            </div>
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <div class="container-popup">
+                        <p>Play & win</p>
+                        <div class="typewriter">LAUNCHING SOON !</div>
+                        <div class="confetti"></div>
+                    </div>
+                    <button class="close-btn" onclick="closePopup()">✖</button>
+                </div>
+            </div>
+            
+        </section>
+
+<script>
+
+function popup() {
+    // Show the popup
+    const popup = document.getElementById('popup');
+    popup.style.display = 'flex';
+
+    const data = document.querySelector(".typewriter");
+
+    confetti({
+  particleCount: 100,
+  spread: 90,
+  origin: {
+    y: (data.getBoundingClientRect().bottom + 60) / window.innerHeight,
+  },
+  zIndex: 9999, 
+});
+
+}
+
+function closePopup() {
+
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+
+</script>
+
+
+<script>
+
+    function letsSpin() {
+      
+      var x = 1024; 
+      var y = 9999; 
+      var deg = Math.floor(Math.random() * (x - y)) + y;
+      document.getElementById('wheel').style.transform = "rotate("+deg+"deg)";
+    }
+    
+    </script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    </body>
+</html>
