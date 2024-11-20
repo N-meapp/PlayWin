@@ -151,6 +151,10 @@ span p {
 
 
 @media only screen and (max-width : 600px) {
+
+
+
+
   .main {
     position: relative;
     width: 300px;
@@ -354,13 +358,17 @@ span p {
   border-radius: 20px;
 }
 
+.cate-adjust{
+  position: relative;
+}
+
 .scratch-card-cover-container {
-  position: absolute;
+  /* position: relative; */
   z-index: 1;
   top: 0;
   left: 0;
   border-radius: 20px !important;
-  width: 100%;
+  width: 600px;
   height: 100%;
   background-color: transparent;
   /* filter: url("#remove-black");
@@ -375,6 +383,10 @@ span p {
   }
 }
 
+.scratch-main{
+  position: relative;
+}
+
 .scratch-card-canvas {
   position: absolute;
   z-index: 2;
@@ -384,6 +396,8 @@ span p {
   height: 100%;
   cursor: grab;
   touch-action: none;
+  /* background: rgb(165, 28, 28); */
+  border-radius: 23px;
 
   &.hidden {
     opacity: 0;
@@ -392,6 +406,28 @@ span p {
   &:active {
     cursor: grabbing;
   }
+}
+
+.scratch-lauching-soon{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.575);
+  z-index: 1;
+  display: none;
+  align-content: center;
+  justify-items: center;
+}
+
+.colorcode-choose{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.575);
+  z-index: 1;
+  display: none;
+  align-content: center;
+  justify-items: center;
 }
 
 .scratch-card-canvas-render {
@@ -403,6 +439,8 @@ span p {
   height: 100%;
   background-color: transparent;
   transition: background-color 0.2s;
+  border-radius: 25px;
+
 
   &.hidden {
     display: none;
@@ -410,10 +448,8 @@ span p {
 }
 
 .scratch-card-cover {
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
+  
+  display: flex;
   width: 100%;
   height: 100%;
   /* background-color: #cfced6;
@@ -425,12 +461,11 @@ span p {
     #e0dfe6,
     #cfced6
   ); */
-  overflow: hidden;
   border-radius: 20px;
 }
 
 .scratch-card-cover::before {
-  content: "";
+  /* content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -445,7 +480,7 @@ span p {
   background-position: bottom right;
   background-size: 300% 300%;
   background-repeat: no-repeat;
-  animation: shine 8s infinite;
+  animation: shine 8s infinite; */
 }
 
 @keyframes shine {
@@ -457,7 +492,7 @@ span p {
   }
 }
 
-.scratch-card-cover::after {
+/* .scratch-card-cover::after {
   content: "";
   position: absolute;
   top: 0;
@@ -466,29 +501,33 @@ span p {
   height: 100%;
   opacity: 0.1;
   filter: url("#noise");
-}
+} */
 
 .scratch-card-cover-background {
-  width: 100%;
+  /* width: 100%;
   height: 100%;
   fill: #555;
-  /* opacity: 0.1; */
   z-index: -1;
   position: absolute;
-  /* position-area: center; */
   border-radius: 20px;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
+  bottom: 0; */
 
 }
 
 .scratch-card-image {
-  border-radius: 20px;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+  margin: auto;
+    border-radius: 25px;
+  position: absolute;
+  width: 25%;
+  /* height: 100vh; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00000087;
   filter: drop-shadow(0 4px 4px rgba(248, 0, 0, 0.16));
   user-select: none;
   will-change: transform;
@@ -497,6 +536,29 @@ span p {
     animation: pop-out-in cubic-bezier(0.65, 1.35, 0.5, 1) 1s;
   }
 }
+
+
+.color-code-choose {
+  margin: auto;
+    border-radius: 25px;
+  position: absolute;
+  width: 25%;
+  /* height: 100vh; */
+  height: 25%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00000087;
+  filter: drop-shadow(0 4px 4px rgba(248, 0, 0, 0.16));
+  user-select: none;
+  will-change: transform;
+
+  &.animate {
+    animation: pop-out-in cubic-bezier(0.65, 1.35, 0.5, 1) 1s;
+  }
+}
+
 
 @keyframes pop-out-in {
   36% {
@@ -540,6 +602,19 @@ span p {
   font-family: scratch-text;
   src: url(../font/bold_game_font_7.ttf);
 }
+
+
+@font-face {
+  font-family: color-code;
+  src: url(../font/Halo\ Dek.ttf);
+}
+
+@font-face {
+  font-family: color-code-heading;
+  src: url(../font/BubaDEMO-Outline.otf);
+}
+
+
 
 .scratch-card-outer {
   position: relative;
@@ -651,6 +726,35 @@ justify-content: space-between;
 cursor: pointer;
 }
 
+.cate-ch3{
+  max-width: 500px;
+  width: 600px;
+background-color: rgb(255, 255, 255);
+margin-bottom: 20px;
+padding: 27px;
+border-radius: 25px;
+border: 3px solid #f45f02;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+display: flex;
+justify-content: space-between;
+cursor: pointer;
+}
+
+.cate-ch4{
+  max-width: 500px;
+  width: 600px;
+background-color: rgb(255, 255, 255);
+margin-bottom: 20px;
+padding: 27px;
+border-radius: 25px;
+border: 3px solid rgb(139 199 63);
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+display: flex;
+justify-content: space-between;
+cursor: pointer;
+}
+
+
 .sec-content{
   text-align: center;
   display: flex;
@@ -728,5 +832,164 @@ border: 3px solid rgb(216, 184, 0);
 box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 cursor: pointer;
 }
+
+.cate-ch3{
+  max-width: 500px;
+  width: 100%;
+background-color: rgb(255, 255, 255);
+margin-bottom: 15px;
+padding: 19px;
+border-radius: 25px;
+border: 3px solid #f45f02;;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+cursor: pointer;
+}
+
+.cate-ch4{
+  max-width: 500px;
+  width: 100%;
+background-color: rgb(255, 255, 255);
+margin-bottom: 15px;
+padding: 19px;
+border-radius: 25px;
+border: 3px solid rgb(139 199 63);
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+cursor: pointer;
+}
+}
+
+
+
+@media (max-width:990px) {
+  .scratch-card-image {
+    width: 50%;
+  }
+}
+
+
+@media (max-width:545px) {
+  .scratch-card-image {
+    width: 80%;
+  }
+}
+
+
+
+.red{
+  background-color: rgb(192, 2, 2);
+}
+
+.green{
+  background-color: rgb(2 181 55);
+}
+
+.blue{
+  background-color: rgb(0 107 199);
+}
+
+.colorcode-colors{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+}
+
+.colorcode-card{
+  padding-inline: 20px;
+  height: 40%;
+  width: 80%;
+  background: #ffffff;
+  border-radius: 25px;
+  align-content: center;
+  justify-items: center;
+  /* background-image: url(../img/colorcodebg.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter: blur(1px);
+  -webkit-filter: blur(1px); */
+}
+
+.colorcode-card h4{
+  font-size: x-large;
+  margin-bottom: 20px;
+  font-family: color-code-heading;
+  color: #000000ab;
+}
+
+.color{
+  height: 80px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 2px 4px 12px #676666;
+}
+
+.color:hover{
+  box-shadow: none;
+}
+
+
+
+
+.scratch-card-popup-red{
+  padding-inline: 20px;
+  height: 40%;
+  width: 80%;
+  background-image: linear-gradient(to right, red , rgb(177, 85, 0));
+  border-radius: 25px;
+  align-content: center;
+  justify-items: center;
+  /* background-image: url(../img/colorcodebg.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+.scratch-card-popup-blue{
+  padding-inline: 20px;
+  height: 40%;
+  width: 80%;
+  background-image: linear-gradient(to right, rgb(0, 162, 255) , rgb(0, 217, 255));
+  border-radius: 25px;
+  align-content: center;
+  justify-items: center;
+  /* background-image: url(../img/colorcodebg.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+
+.scratch-card-popup-green{
+  padding-inline: 20px;
+  height: 40%;
+  width: 80%;
+  background-image: linear-gradient(to right, rgb(0, 179, 104) , rgb(0, 255, 179));
+  border-radius: 25px;
+  align-content: center;
+  justify-items: center;
+  /* background-image: url(../img/colorcodebg.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+
+.scratch-card-popup{
+  font-size: 45px;
+  text-shadow: 2px 2px 4px #ffffff;
+  text-align: center;
+font-family: color-code;
+
+}
+
+.soon{
+  font-size: 80px;
+  text-shadow: 2px 2px 4px #ffffff;
+  text-align: center;
+font-family: color-code;
 
 }

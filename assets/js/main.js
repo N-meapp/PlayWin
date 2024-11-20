@@ -1,3 +1,36 @@
+// changing canvas height and width
+
+
+const canvasId = document.getElementById("myCanvas");
+let parent;
+if(canvasId){
+  parent = canvasId.parentElement;
+
+  function resizeCanvas() {
+    // Set canvas width and height to match the parent dimensions
+    canvasId.width = parent.offsetWidth;
+    canvasId.height = parent.offsetHeight;
+
+    // Optional: Redraw content after resizing
+    const ctx = canvasId.getContext("2d");
+    ctx.clearRect(0, 0, canvasId.width, canvasId.height);
+    ctx.fillStyle = "lightblue";
+    ctx.fillRect(0, 0, canvasId.width, canvasId.height);
+}
+
+// Resize canvas initially
+resizeCanvas();
+}
+
+
+
+// Resize canvas on window resize
+window.addEventListener("resize", resizeCanvas);
+
+
+
+
+
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -66,6 +99,7 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 // scratch and win
 
 
+console.log('ppppppppppppppppppp');
 
 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
@@ -73,7 +107,7 @@ const scratchCardCover = document.querySelector('.scratch-card-cover');
 const scratchCardCanvasRender = document.querySelector('.scratch-card-canvas-render');
 const scratchCardCoverContainer = document.querySelector('.scratch-card-cover-container');
 const scratchCardText = document.querySelector('.scratch-card-text');
-const scratchCardImage = document.querySelector('.scratch-card-image');
+const scratchCardImage = document.querySelector('.scratch-lauching-soon');
 
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
@@ -99,6 +133,8 @@ if (isSafari) {
 }
 
 canvas.addEventListener('pointerdown', (e) => {
+  console.log('hahhahahaha');
+  
   scratchCardCover.classList.remove('shine');
   ({ x: positionX, y: positionY } = getPosition(e));
   clearTimeout(clearDetectionTimeout);
@@ -144,7 +180,9 @@ const checkBlackFillPercentage = () => {
     });
     // handlePopup()
     // scratchCardText.textContent = '🎉 You got a $50 Apple gift card!';
+    scratchCardImage.style.display = 'block'
     scratchCardImage.classList.add('animate');
+
     scratchCardCoverContainer.addEventListener('transitionend', () => {
       scratchCardCoverContainer.classList.add('hidden');
     }, { once: true });
@@ -215,3 +253,47 @@ const plot = (e) => {
 
 
 
+
+
+
+
+
+function closePopupScratch() {
+
+  const popup = document.getElementById('scratch-lauching-soon');
+  popup.style.display = 'none';
+  window.location.reload()
+}
+
+
+function showColorCode(){
+  const colorcode = document.getElementById('colorcode-choose')
+  colorcode.style.display = 'block'
+}
+
+
+function showLaunchingSoon(color){
+const colorcode = document.getElementById('colorcode-choose')
+const scratchCardText = document.querySelector('.scratch-card-text');
+const scratchCardImage = document.getElementById('scratchcard-lauching-soon');
+const scratchCard = document.getElementById(`scratch-card-popup-${color}`)
+
+
+  colorcode.style.display = 'none'
+
+  console.log('haiii');
+  
+  scratchCardImage.style.display = 'block'
+  scratchCard.style.display = 'block'
+
+
+  confetti({
+    particleCount: 100,
+    spread: 90,
+    origin: {
+       y: (scratchCardImage.getBoundingClientRect().bottom + 60) / window.innerHeight,
+    },
+  });
+
+
+}
