@@ -12,14 +12,14 @@
   <body>
     <section class="each-section section-vis">
       <div class="cate-div">
-        <a class="cate-div-a" href="spin.html">
+        <a class="cate-div-a" href="#" onclick="popup()">
           <div class="cate-ch1">
             <div class="sec-content" style="flex-grow: 7">
               <h1>Spin & win 💸</h1>
               <p>click here to spin and win</p>
             </div>
             <div class="sec-img" style="flex-grow: 3">
-              <img src="./assets/img/spin2.png" />
+              <img src="./assets/img/spin2.png">
             </div>
           </div>
         </a>
@@ -46,17 +46,17 @@
           </div>
         </div>
 
-        <a class="cate-div-a" href="bigSpin.html">
-          <div class="cate-ch3">
+        <a class="cate-div-a" href="#" onclick="popup2()">
+          <div class="cate-ch2">
             <div class="sec-content" style="flex-grow: 7">
               <h1>Biggest Spin 💸💸</h1>
               <p>click here to Spin</p>
             </div>
             <div class="sec-img" style="flex-grow: 3">
-              <img src="./assets/img/spin3.png" />
+              <img src="./assets/img/spin3.png">
             </div>
           </div>
-        </a>
+          </a>
 
         <div class="cate-div-a" onclick="showColorCode()">
           <div class="cate-ch4">
@@ -74,18 +74,40 @@
 
       <!-- </div> -->
 
+      <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="container-popup">
+                <p>Play & win</p>
+                <div class="typewriter">LAUNCHING <br> SOON !</div>
+                <div class="confetti"></div>
+            </div>
+            <button class="close-btn" onclick="closePopup()">✖</button>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup2">
+      <div class="popup-content2">
+          <div class="container-popup">
+              <p class="tow-nt-p">Play & Win</p>
+              <div class="typewriter">LAUNCHING <br> SOON !</div>
+              <div class="confetti"></div>
+          </div>
+          <button class="close-btn" onclick="closePopup2()">✖</button>
+      </div>
+  </div>
+
       <div
         onclick="closePopupScratch()"
         id="scratch-lauching-soon"
         class="scratch-lauching-soon"
       >
+      <div class="scratch-card-text"></div>
         <img
           class="scratch-card-image"
           src="./assets/img/comingsoon2.png"
           alt="Apple 50$ gift card"
         />
         <!-- <p class="scratch-card-text"></p> -->
-        <div class="scratch-card-text"></div>
       </div>
 
       <div onclick="" id="colorcode-choose" class="colorcode-choose">
@@ -111,11 +133,11 @@
         <img
           class="scratch-card-image"
           src="./assets/img/comingsoon2.png"
-          alt="Apple 50$ gift card"
+          alt="launchingsoon"
         />
       
       </div>
-
+      
       <div onclick="closePopupScratch()" id="scratchcard-lauching-soon" class="scratch-lauching-soon">
         <div id="scratch-card-popup-green" class="scratch-card-popup-green">
           
@@ -131,9 +153,70 @@
         </div>
 
         <!-- <p class="scratch-card-text"></p> -->
-        <div class="scratch-card-text"></div>
       </div>
+
+
     </section>
+
+
+
+    <script>
+
+      function popup() {
+          // Show the popup
+          const popup = document.getElementById('popup');
+          popup.style.display = 'flex';
+      
+          const data = document.querySelector(".typewriter");
+      
+          confetti({
+        particleCount: 100,
+        spread: 90,
+        origin: {
+          y: (data.getBoundingClientRect().bottom + 60) / window.innerHeight,
+        },
+        zIndex: 9999, 
+      });
+      
+      }
+      
+      function closePopup() {
+      
+          const popup = document.getElementById('popup');
+          popup.style.display = 'none';
+      }
+      
+      </script>
+
+<script>
+
+  function popup2() {
+      // Show the popup
+      const popup = document.getElementById('popup2');
+      popup.style.display = 'flex';
+  
+      const data = document.querySelector(".typewriter");
+  
+      confetti({
+    particleCount: 100,
+    spread: 90,
+    origin: {
+      y: (data.getBoundingClientRect().bottom + 60) / window.innerHeight,
+    },
+    zIndex: 9999, 
+  });
+  
+  }
+  
+  function closePopup2() {
+  
+      const popup = document.getElementById('popup2');
+      popup.style.display = 'none';
+  }
+  
+  </script>
+
+
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="assets/js/main.js"></script>

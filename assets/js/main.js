@@ -267,6 +267,8 @@ function closePopupScratch() {
 
 
 function showColorCode(){
+  console.log('haiiii');
+  
   const colorcode = document.getElementById('colorcode-choose')
   colorcode.style.display = 'block'
 }
@@ -274,7 +276,8 @@ function showColorCode(){
 
 function showLaunchingSoon(color){
 const colorcode = document.getElementById('colorcode-choose')
-const scratchCardText = document.querySelector('.scratch-card-text');
+// const colorId = document.querySelector('');
+// const color = document.getElementById
 const scratchCardImage = document.getElementById('scratchcard-lauching-soon');
 const scratchCard = document.getElementById(`scratch-card-popup-${color}`)
 
@@ -291,7 +294,7 @@ const scratchCard = document.getElementById(`scratch-card-popup-${color}`)
     particleCount: 100,
     spread: 90,
     origin: {
-       y: (scratchCardImage.getBoundingClientRect().bottom + 60) / window.innerHeight,
+       y: (scratchCard.getBoundingClientRect().bottom + 60) / window.innerHeight,
     },
   });
 
