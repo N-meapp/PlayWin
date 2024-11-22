@@ -106,7 +106,7 @@ const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 const scratchCardCover = document.querySelector('.scratch-card-cover');
 const scratchCardCanvasRender = document.querySelector('.scratch-card-canvas-render');
 const scratchCardCoverContainer = document.querySelector('.scratch-card-cover-container');
-const scratchCardText = document.querySelector('.scratch-card-text');
+const scratchCardText = document.querySelector('.scratch-card-popup');
 const scratchCardImage = document.querySelector('.scratch-lauching-soon');
 
 const canvas = document.querySelector('canvas');
@@ -162,7 +162,7 @@ const checkBlackFillPercentage = () => {
     const blue = pixelData[i + 2];
     const alpha = pixelData[i + 3];
 
-    if (red === 0 && green === 0 && blue === 0 && alpha === 255) {
+    if (red === 219 && green === 219 && blue === 219 && alpha > 128) {
       blackPixelCount++;
     }
   }
@@ -180,7 +180,10 @@ const checkBlackFillPercentage = () => {
     });
     // handlePopup()
     // scratchCardText.textContent = '🎉 You got a $50 Apple gift card!';
-    scratchCardImage.style.display = 'block'
+
+    handleScratch()
+    document.body.style.overflow = 'hidden';
+    // scratchCardImage.style.display = 'block'
     scratchCardImage.classList.add('animate');
 
     scratchCardCoverContainer.addEventListener('transitionend', () => {
@@ -207,6 +210,7 @@ const plotLine = (context, x1, y1, x2, y2) => {
   var x;
   var y;
 
+  context.fillStyle = 'rgb(219 219 219)';
   while (i < dist) {
     t = Math.min(1, i / dist);
 
@@ -262,24 +266,41 @@ function closePopupScratch() {
 
   const popup = document.getElementById('scratch-lauching-soon');
   popup.style.display = 'none';
+
+  document.body.style.overflow = 'auto';
+
+
   window.location.reload()
 }
 
 
 function showColorCode(){
+  
   console.log('haiiii');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   
   const colorcode = document.getElementById('colorcode-choose')
   colorcode.style.display = 'block'
+
+  setTimeout(() => {
+    
+    document.body.style.overflow = 'hidden';
+  }, 500);
+
 }
 
 
 function showLaunchingSoon(color){
+
+
 const colorcode = document.getElementById('colorcode-choose')
 // const colorId = document.querySelector('');
 // const color = document.getElementById
 const scratchCardImage = document.getElementById('scratchcard-lauching-soon');
 const scratchCard = document.getElementById(`scratch-card-popup-${color}`)
+
+window.scrollTo({ top: 0, behavior: 'smooth' });
 
 
   colorcode.style.display = 'none'
@@ -289,6 +310,9 @@ const scratchCard = document.getElementById(`scratch-card-popup-${color}`)
   scratchCardImage.style.display = 'block'
   scratchCard.style.display = 'block'
 
+  document.body.style.overflow = 'hidden';
+
+
 
   confetti({
     particleCount: 100,
@@ -297,6 +321,79 @@ const scratchCard = document.getElementById(`scratch-card-popup-${color}`)
        y: (scratchCard.getBoundingClientRect().bottom + 60) / window.innerHeight,
     },
   });
+
+
+}
+
+
+
+function handleDice(){
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  console.log('helloo guys');
+  
+ const colorcode = document.getElementById('dice-popup')
+ const diceCard = document.getElementById('dice-card-popup')
+  colorcode.style.display = 'block'
+  diceCard.style.display = 'block'
+
+  document.body.style.overflow = 'hidden';
+
+
+  confetti({
+    particleCount: 100,
+    spread: 90,
+    origin: {
+       y: (diceCard.getBoundingClientRect().bottom + 60) / window.innerHeight,
+    },
+  });
+}
+
+
+function closingDice(){
+  const colorcode = document.getElementById('dice-popup')
+ const diceCard = document.getElementById('dice-card-popup')
+  colorcode.style.display = 'none'
+  diceCard.style.display = 'none'
+
+  document.body.style.overflow = 'auto';
+
+
+}
+
+
+
+function handleScratch(){
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+console.log('helloo guys');
+
+const colorcode = document.getElementById('scratching-popup')
+const diceCard = document.getElementById('scratching-card-popup')
+colorcode.style.display = 'block'
+diceCard.style.display = 'block'
+
+document.body.style.overflow = 'hidden';
+
+
+confetti({
+  particleCount: 100,
+  spread: 90,
+  origin: {
+     y: (diceCard.getBoundingClientRect().bottom + 60) / window.innerHeight,
+  },
+});
+}
+
+
+function closingScratch(){
+const colorcode = document.getElementById('scratching-popup')
+const diceCard = document.getElementById('scratching-card-popup')
+colorcode.style.display = 'none'
+diceCard.style.display = 'none'
+window.location.reload()
+
+document.body.style.overflow = 'auto';
 
 
 }

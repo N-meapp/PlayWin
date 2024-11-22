@@ -6,9 +6,17 @@
   box-sizing: border-box;
   outline: none;
 }
-body { 
-  
+body {
+  background: url(../img/bg-web.jpg) no-repeat center;
+  background-size: cover;
+  height: 100%;
+  overflow: auto; /* Allows scrolling */
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
 }
+body::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for Chrome, Safari, and Edge */
+}
+
 
 .spin-sec{
   font-family: sans-serif;
@@ -30,6 +38,11 @@ body {
 @font-face {
   font-family: scrach;
   src: url(../font/Dynamix.ttf);
+}
+
+@font-face {
+  font-family: playwin;
+  src: url(../font/Vampire\ Wars.ttf);
 }
 
 .wheel {
@@ -281,9 +294,25 @@ span p {
   align-items: center;
 }
 
+.popup3 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 .popup-content {
+  width: 80%;
+  height: 30%;
+  align-content: center;
   position: relative;
   background: rgb(135,45,191);
   background: linear-gradient(90deg, rgba(135,45,191,1) 43%, rgba(255,0,0,0.9248074229691877) 100%);
@@ -298,9 +327,30 @@ span p {
 }
 
 .popup-content2 {
+  width: 80%;
+  height: 30%;
+  align-content: center;
   position: relative;
   background: rgb(230,196,0);
   background: radial-gradient(circle, rgba(230,196,0,1) 0%, rgba(200,98,0,1) 100%);
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  animation: popup-fade-in 0.5s ease-in-out;
+  font-size: 40px;
+  font-weight: 800;
+ margin: 8px;
+}
+
+
+.popup-content3 {
+  width: 80%;
+  height: 30%;
+  align-content: center;
+  position: relative;
+  background: rgb(230,196,0);
+  background: radial-gradient(circle, rgb(45 163 191) 43%, #00586d 100%);
   padding: 30px;
   border-radius: 10px;
   color: #fff;
@@ -328,8 +378,25 @@ span p {
 
 
 .container-popup .typewriter{
-  font-family: scrach;
+  font-family:color-code ;
+  letter-spacing: 3px;
+    text-shadow: 3px 3px 5px black;
+    color: #f9beff;
 }
+.container-popup .typewriter2{
+  font-family:color-code ;
+  letter-spacing: 3px;
+    text-shadow: 3px 3px 5px black;
+    color: antiquewhite;
+}
+
+.container-popup .typewriter3{
+  font-family:color-code ;
+  letter-spacing: 3px;
+    text-shadow: 3px 3px 5px black;
+    color: #bed4ff;
+}
+
 .close-btn {
   position: absolute;
   top: -12px;
@@ -401,11 +468,13 @@ span p {
 
 .cate-adjust{
   position: relative;
+  border: 3px solid rgb(216, 184, 0) !important;
+
 }
 
 .scratch-card-cover-container {
   /* position: relative; */
-  z-index: 1;
+  /* z-index: 100; */
   top: 0;
   left: 0;
   border-radius: 20px !important;
@@ -451,20 +520,35 @@ span p {
 
 .scratch-lauching-soon{
   position: absolute;
+  margin-top: -100px;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.575);
-  z-index: 1;
+  z-index: 100;
   display: none;
   align-content: center;
 }
 
 .colorcode-choose{
   position: absolute;
+  margin-top: -100px;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.575);
-  z-index: 1;
+  z-index: 100;
+  display: none;
+  align-content: center;
+  /* justify-items: center; */
+  /* place-items: center; */
+}
+
+.dice-popup{
+  position: absolute;
+  margin-top: -100px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.575);
+  z-index: 100;
   display: none;
   align-content: center;
   /* justify-items: center; */
@@ -473,7 +557,7 @@ span p {
 
 .scratch-card-canvas-render {
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -679,7 +763,7 @@ span p {
   background-size: cover;
   background-repeat: no-repeat;
   filter: blur(5px);
-  z-index: 1;
+  z-index: 100;
 }
 
 .scratch-card-outer > * {
@@ -707,16 +791,18 @@ html{
 }
 
 .each-section{
-  height: 100vh;
+  /* height: 100vh; */
   scroll-snap-align: center;
+  padding-top: 100px !important;
+  padding-bottom: 100px;
 }
 
 
-@media  (max-width:650px) {
+/* @media  (max-width:650px) {
   .each-section{
     height: 100vh;
   }
-}
+} */
 
 
 .section-vis{
@@ -726,6 +812,10 @@ html{
   /* align-items: center; */
   background: url(../img/bg-web.jpg) no-repeat center;
   background-size: cover;
+}
+
+body{
+ 
 }
 
 
@@ -746,6 +836,7 @@ html{
   margin-bottom: 20px;
   padding: 27px;
   border-radius: 25px;
+  
   border: 3px solid rgb(209 29 206);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
   display: flex;
@@ -760,7 +851,7 @@ background-color: rgb(255, 255, 255);
 margin-bottom: 20px;
 padding: 27px;
 border-radius: 25px;
-border: 3px solid rgb(216, 184, 0);
+border: 3px solid rgb(216, 97, 0);
 box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 display: flex;
 justify-content: space-between;
@@ -901,6 +992,15 @@ cursor: pointer;
 
 
 @media (min-width:990px){
+  .popup-content{
+    width: 25%;
+  }
+  .popup-content2{
+    width: 25%;
+  }
+  .popup-content3{
+    width: 25%;
+  }
   .scratch-card-image {
     width: 25%;
   }
@@ -921,6 +1021,12 @@ cursor: pointer;
   .scratch-card-popup-green{
     width: 25%;
   }
+  .dice-card-popup{
+    width: 25%;
+  }
+  .scratching-card-popup{
+    width: 25%;
+  }
   .scratch-card-popup-red{
     width: 25%;
   }
@@ -934,6 +1040,16 @@ cursor: pointer;
 
 
 @media (max-width:990px) {
+
+  .popup-content{
+    width: 50%;
+  }
+  .popup-content2{
+    width: 50%;
+  }
+  .popup-content3{
+    width: 50%;
+  }
   .scratch-card-image {
     width: 50%;
   }
@@ -954,6 +1070,12 @@ cursor: pointer;
   .scratch-card-popup-green{
     width: 50%;
   }
+  .dice-card-popup{
+    width: 50%;
+  }
+  .scratching-card-popup{
+    width: 50%;
+  }
   .scratch-card-popup-red{
     width: 50%;
   }
@@ -965,6 +1087,17 @@ cursor: pointer;
 
 
 @media (max-width:545px) {
+
+  .popup-content{
+    width: 80%;
+  }
+  .popup-content2{
+    width: 80%;
+  }
+  .popup-content3{
+    width: 80%;
+  }
+
   .scratch-card-image {
     width: 80% !important;
   }
@@ -978,6 +1111,12 @@ cursor: pointer;
     width: 80%;
   }
   .scratch-card-popup-green{
+    width: 80%;
+  }
+  .dice-card-popup{
+    width: 80%;
+  }
+  .scratching-card-popup{
     width: 80%;
   }
   .scratch-card-popup-red{
@@ -1113,5 +1252,157 @@ font-family: color-code;
   text-shadow: 2px 2px 4px #ffffff;
   text-align: center;
 font-family: color-code;
+
+}
+
+
+.navbar{
+  height: 55px;
+  width: 80%;
+  z-index: 10;
+  background: rgb(255, 255, 255);
+  border-radius: 55px;
+  margin-bottom: 50px;
+  position: fixed;
+  top: 20px;
+  display: flex;
+  box-shadow: 2px 2px 14px #00000040;
+  justify-content: space-between;
+  padding-inline: 20px;
+  align-items: center;
+  
+
+
+}
+
+.user{
+  width: 27px;
+  height: 27px;
+}
+
+.navbar-icon{
+  display: flex;
+  /* gap: 5px; */
+}
+
+.nav-first{
+  align-items: center;
+}
+
+.nav-second{
+  font-size: x-large;
+}
+
+.nav-first, .nav-second{
+  display: flex;
+    background: -webkit-linear-gradient( #fff8df, #696441 );
+
+  /* background: -webkit-linear-gradient( #fff8df, #696441 ); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  font-family: playwin;
+}
+
+
+
+@media only screen and (min-width: 750px) {
+
+
+  .navbar{
+    height: 80px;
+    width: 60%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    position: fixed;
+    top: 20px;
+    display: flex;
+    box-shadow: 2px 2px 14px #00000040;
+    justify-content: space-between;
+    padding-inline: 20px;
+    align-items: center;
+    
+  
+  
+  }
+  
+  .user{
+    width: 39px;
+    height: 39px;
+  }
+
+}
+
+.rolling-dice{
+  height: 50px;
+  width: 50px;
+}
+
+
+.lottiefile{
+  width: 130px;
+  height: 130px;
+  justify-self: center;
+  margin-top: -55px;
+}
+
+
+
+
+.elastic-spin {
+  animation: elastic-spin 2s infinite ease;
+}
+@keyframes elastic-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(720deg); }
+}
+
+
+.spinner {
+  animation: spinner 8s infinite linear;
+}
+@keyframes spinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.dice-card-popup{
+  padding-inline: 20px;
+  height: 40%;
+  /* width: 25%; */
+  background-image: url(../img/dice.jpg);
+  border-radius: 25px;
+  align-content: center;
+  /* justify-items: center; */
+  /* background-image: url(../img/colorcodebg.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+  justify-self: center;
+
+}
+
+.scratching-card-popup{
+  padding-inline: 20px;
+  height: 40%;
+  /* width: 25%; */
+  background-image: url(../img/scratchcard.png);
+  border-radius: 25px;
+  align-content: center;
+  /* justify-items: center; */
+  /* background-image: url(../img/colorcodebg.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+  justify-self: center;
+
+}
+
+
+.cup{
+  filter: drop-shadow(5px 5px 5px #22222270); 
 
 }
