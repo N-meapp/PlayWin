@@ -62,7 +62,7 @@
         </div>
 
         <!-- dice & roll -->
-        <a class="cate-div-a" href="#" onclick="handleDice()">
+        <a class="cate-div-a" href="#" onclick="popup4()">
           <div class="cate-ch1">
             <div class="sec-content" style="flex-grow: 7">
               <h1>Dice & Roll 🎲</h1>
@@ -326,6 +326,31 @@
 
 <script>
   function popup3() {
+    // Show the popup
+    const popup = document.getElementById("popup3");
+    popup.style.display = "flex";
+
+    const data = document.querySelector(".typewriter3");
+
+    confetti({
+      particleCount: 100,
+      spread: 90,
+      origin: {
+        y: (data.getBoundingClientRect().bottom + 60) / window.innerHeight,
+      },
+      zIndex: 9999,
+    });
+  }
+
+  function closePopup3() {
+    const popup = document.getElementById("popup3");
+    popup.style.display = "none";
+  }
+</script>
+
+
+<script>
+  function popup4() {
     // Show the popup
     const popup = document.getElementById("popup3");
     popup.style.display = "flex";

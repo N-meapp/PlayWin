@@ -181,7 +181,8 @@ const checkBlackFillPercentage = () => {
     // handlePopup()
     // scratchCardText.textContent = '🎉 You got a $50 Apple gift card!';
 
-    handleScratch()
+    // handleScratch()
+    popup2()
     document.body.style.overflow = 'hidden';
     // scratchCardImage.style.display = 'block'
     scratchCardImage.classList.add('animate');
@@ -278,7 +279,6 @@ function showColorCode(){
   
   console.log('haiiii');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
   
   const colorcode = document.getElementById('colorcode-choose')
   colorcode.style.display = 'block'
@@ -286,7 +286,7 @@ function showColorCode(){
   setTimeout(() => {
     
     document.body.style.overflow = 'hidden';
-  }, 500);
+  }, 1000);
 
 }
 

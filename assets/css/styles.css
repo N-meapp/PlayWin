@@ -1150,6 +1150,27 @@ cursor: pointer;
 }
 
 
+
+.colorcode-card h4{
+  font-size: x-large;
+  margin-bottom: 20px;
+  font-family: color-code-heading;
+  color: #000000ab;
+}
+
+.color{
+  height: 80px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 2px 4px 12px #676666;
+}
+
+.color:hover{
+  box-shadow: none;
+}
+
+
+
 .colorcode-card{
   display: block;
   position: absolute;
@@ -1171,26 +1192,6 @@ cursor: pointer;
   /* filter: blur(1px);
   -webkit-filter: blur(1px); */
 }
-
-.colorcode-card h4{
-  font-size: x-large;
-  margin-bottom: 20px;
-  font-family: color-code-heading;
-  color: #000000ab;
-}
-
-.color{
-  height: 80px;
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 2px 4px 12px #676666;
-}
-
-.color:hover{
-  box-shadow: none;
-}
-
-
 
 
 .scratch-card-popup-red{
@@ -1400,6 +1401,7 @@ font-family: color-code;
   margin-inline: auto;
   right: 0;
   height: 40%;
+  padding-inline: 20px;
   background-image: url(../img/dice.jpg);
   border-radius: 25px;
   align-content: center;
