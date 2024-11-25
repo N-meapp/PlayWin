@@ -1151,13 +1151,19 @@ cursor: pointer;
 
 
 .colorcode-card{
+  display: block;
+  position: absolute;
+  top: 0px;
+  margin-top: 25vh;
+  left: 0;
+  margin-inline: auto;
+  right: 0;
   padding-inline: 20px;
   height: 40%;
   background: #ffffff;
   border-radius: 25px;
   align-content: center;
   text-align: center;
-  justify-self: center;
   /* background-image: url(../img/colorcodebg.jpg); */
   background-position: center;
   background-size: cover;
@@ -1188,6 +1194,13 @@ cursor: pointer;
 
 
 .scratch-card-popup-red{
+  display: block;
+  position: absolute;
+  top: 0px;
+  margin-top: 25vh;
+  left: 0;
+  margin-inline: auto;
+  right: 0;
   padding-inline: 20px;
   height: 40%;
   /* width: 25%; */
@@ -1200,10 +1213,16 @@ cursor: pointer;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
-  justify-self: center;
 }
 
 .scratch-card-popup-blue{
+  display: block;
+  position: absolute;
+  top: 0px;
+  margin-top: 25vh;
+  left: 0;
+  margin-inline: auto;
+  right: 0;
   padding-inline: 20px;
   height: 40%;
   /* width: 25%; */
@@ -1216,12 +1235,18 @@ cursor: pointer;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
-  justify-self: center;
 
 }
 
 
 .scratch-card-popup-green{
+  display: block;
+  position: absolute;
+  top: 0px;
+  margin-top: 25vh;
+  left: 0;
+  margin-inline: auto;
+  right: 0;
   padding-inline: 20px;
   height: 40%;
   /* width: 25%; */
@@ -1234,7 +1259,6 @@ cursor: pointer;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
-  justify-self: center;
 
 }
 
@@ -1368,23 +1392,33 @@ font-family: color-code;
 
 
 .dice-card-popup{
-  padding-inline: 20px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  margin-top: 25vh;
+  left: 0;
+  margin-inline: auto;
+  right: 0;
   height: 40%;
-  /* width: 25%; */
   background-image: url(../img/dice.jpg);
   border-radius: 25px;
   align-content: center;
-  /* justify-items: center; */
-  /* background-image: url(../img/colorcodebg.jpg); */
+ 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
-  justify-self: center;
 
 }
 
 .scratching-card-popup{
+  display: block;
+  position: absolute;
+  top: 0px;
+  margin-top: 25vh;
+  left: 0;
+  margin-inline: auto;
+  right: 0;
   padding-inline: 20px;
   height: 40%;
   /* width: 25%; */
@@ -1397,7 +1431,6 @@ font-family: color-code;
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
-  justify-self: center;
 
 }
 
