@@ -423,5 +423,4 @@ function closePopupScratch() {
   const popup = document.getElementById("popup3");
   popup.style.display = "none";
   window.location.reload()
-
 }
