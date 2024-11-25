@@ -183,7 +183,8 @@ const checkBlackFillPercentage = () => {
 
     // handleScratch()
     popup2()
-    document.body.style.overflow = 'hidden';
+    window.location.reload()
+    // document.body.style.overflow = 'hidden';
     // scratchCardImage.style.display = 'block'
     scratchCardImage.classList.add('animate');
 
