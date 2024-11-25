@@ -182,8 +182,7 @@ const checkBlackFillPercentage = () => {
     // scratchCardText.textContent = '🎉 You got a $50 Apple gift card!';
 
     // handleScratch()
-    popup2()
-    window.location.reload()
+    popupScratch()
     // document.body.style.overflow = 'hidden';
     // scratchCardImage.style.display = 'block'
     scratchCardImage.classList.add('animate');
@@ -396,5 +395,33 @@ window.location.reload()
 
 document.body.style.overflow = 'auto';
 
+
+}
+
+
+
+
+
+function popupScratch() {
+  // Show the popup
+  const popup = document.getElementById("popup-scratch");
+  popup.style.display = "flex";
+
+  const data = document.querySelector(".typewriter3");
+
+  confetti({
+    particleCount: 100,
+    spread: 90,
+    origin: {
+      y: (data.getBoundingClientRect().bottom + 60) / window.innerHeight,
+    },
+    zIndex: 9999,
+  });
+}
+
+function closePopupScratch() {
+  const popup = document.getElementById("popup3");
+  popup.style.display = "none";
+  window.location.reload()
 
 }
